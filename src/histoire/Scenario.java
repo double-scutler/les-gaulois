@@ -1,5 +1,7 @@
 package histoire;
 
+import java.util.Iterator;
+
 import personnages.Druide;
 import personnages.Gaulois;
 import personnages.Romain;
@@ -21,8 +23,10 @@ public class Scenario {
 		while (minus.getForce() > 0) {
 			asterix.frapper(minus,panoramix.getForcePotion());
 		}
-			
+		
 		}
+
+		
 		
 
 	}
