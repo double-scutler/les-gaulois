@@ -12,6 +12,11 @@ public class Romain {
 	public String getNom() {
 		return nom;
 	}
+	
+
+	public int getForce() {
+		return force;
+	}
 
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "<" + texte + ">");
@@ -19,7 +24,7 @@ public class Romain {
 
 	private String prendreParole() {
 
-		return "le romain" + nom + " : ";
+		return "le romain " + nom + " : ";
 	}
 
 	public void recevoirCoup(int forceCoup) {
@@ -32,5 +37,12 @@ public class Romain {
 		}
 
 	}
+	
+	public static void main(String[] args) {
+		Romain romain1 = new Romain("romain1" , 8);
+		romain1.parler("lessgoo");
+		romain1.recevoirCoup(7);
+	}
+	
 
 }
