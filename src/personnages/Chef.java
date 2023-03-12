@@ -1,15 +1,17 @@
 package personnages;
 
-import java.util.Set;
-
-public class Gaulois {
+public class Chef {
 	private String nom;
 	private int force;
-	private int effetPotion = -1;
+	private int effetpostion = 1;
+	private Village village;
 
-	public Gaulois(String nom, int force) {
+	public Chef(String nom, int force, int effetpostion, Village village) {
+		super();
 		this.nom = nom;
 		this.force = force;
+		this.effetpostion = effetpostion;
+		this.village = village;
 	}
 
 	public String getNom() {
@@ -21,23 +23,11 @@ public class Gaulois {
 	}
 
 	private String prendreParole() {
-
-		return "le gaulois" + nom + " : ";
+		return "Le chef" + nom + " dun village " + village.getNom() + " : ";
 	}
 
 	public void frapper(Romain romain) {
 		System.out.println(nom + "envoie un frand coup dans la machoire de" + romain.getNom());
 		romain.recevoirCoup(force / 3);
-
-	}
-
-	@Override
-	public String toString() {
-		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
-	}
-
-	public static void main(String[] args) {
-		//TODO
-
 	}
 }
