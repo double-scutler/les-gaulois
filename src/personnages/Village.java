@@ -34,7 +34,7 @@ public class Village {
 		//Gaulois gaulois = village.trouverHabitant(30);
 		//j'ai pas obtenu de message :/
 		Chef abraracourcix = new Chef("Abraracourcix",6,village);
-		village.ajouterHabitant(abraracourcix);
+		//village.ajouterHabitant(abraracourcix);
 		
 		Gaulois asterix = new Gaulois("Asterix",8);
 	}

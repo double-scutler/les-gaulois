@@ -56,8 +56,7 @@ public class Druide {
 		} else {
 			gaulois.boirePotion(forcePotion);
 		}
-		
-		
+
 	}
 
 	public void parler(String texte) {
