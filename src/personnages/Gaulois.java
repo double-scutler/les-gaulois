@@ -6,7 +6,8 @@ public class Gaulois {
 	private String nom;
 	//private int force;
 	public int effetPotion = 1;
-	private int force, nb_trophees;
+	private int nb_trophees;
+	private int force;
 	private Equipement trophees[] = new Equipement[100];
 
 	public Gaulois(String nom, int force) {
