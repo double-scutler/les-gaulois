@@ -21,7 +21,7 @@ public class Scenario {
 		asterix.parler("Bonjour");
 		minus.parler("UN GAU... UN GAUGAU...");
 		while (minus.getForce() > 0) {
-			asterix.frapper(minus,panoramix.getForcePotion());
+		//	asterix.frapper(minus,panoramix.getForcePotion());
 		}
 		
 		}
