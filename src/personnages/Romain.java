@@ -4,8 +4,8 @@ public class Romain {
 	private String nom;
 	private int force;
 	private String texte;
-	private int nbEquipement;
-	private Equipement[] equipements;
+	private int nbEquipement=0;
+	private Equipement[] equipements= new Equipement[2];
 	
 	public Romain(String nom, int force) {
 		this.nom = nom;
@@ -44,6 +44,36 @@ public class Romain {
 		assert force_initiale > force : "la force du romain doit diminuer";
 
 	}
+	public void sEquiper(Equipement equipement) {
+		switch (nbEquipement) {
+		
+		case 2:
+			System.out.println("Le soldat "+ nom +" est déjà bien protégé !");
+			break;
+			
+			
+		case 1:
+			if (this.equipements[0]== equipement) {
+				System.out.println("Le soldat " +nom+ " possède déjà un "+ equipement.toString()+" !");
+				break;
+				
+			} else {
+				equipements[1] = equipement;
+				nbEquipement++;
+				System.out.println("Le soldat "+nom+" s'équipe avec un "+ equipement.toString()+".");
+				break;
+			}
+			
+
+		default:
+			equipements[0] = equipement;
+			nbEquipement++;
+			System.out.println("Le soldat "+nom+" s'équipe avec un "+equipement.toString()+".");
+			break;
+		}
+		
+	}
+	
 //	/////////////////////////////////////////////////////////
 //	public Equipement[] recevoirCoup(int forceCoup) {
 //		Equipement[] equipementEjecte = null;
@@ -118,6 +148,15 @@ public class Romain {
 		romain1.parler("lessgoo");
 		romain1.recevoirCoup(7);
 		Romain minus = new Romain("Minus",6);
+		Equipement equipement1 = Equipement.CASQUE;
+        Equipement equipement2 = Equipement.BOUCLIER;
+        System.out.println(equipement1);
+        System.out.println(equipement2);
+        minus.sEquiper(equipement1);
+        minus.sEquiper(equipement1);
+        minus.sEquiper(equipement2);
+        minus.sEquiper(equipement1);
+        
 
 	}
 
