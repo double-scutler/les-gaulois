@@ -58,19 +58,19 @@ public class Romain {
 				break;
 				
 			} else {
-				extracted(equipement,1);
+				placerEquipementTableau(equipement,1);
 				break;
 			}
 			
 
 		default:
-			extracted(equipement,0);
+			placerEquipementTableau(equipement,0);
 			break;
 		}
 		
 	}
 
-	private void extracted(Equipement equipement,int i) {
+	private void placerEquipementTableau(Equipement equipement,int i) {
 		equipements[i] = equipement;
 		nbEquipement++;
 		System.out.println("Le soldat "+nom+" s'équipe avec un "+equipement.toString()+".");
