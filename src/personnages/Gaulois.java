@@ -1,14 +1,12 @@
 package personnages;
 
-import java.util.Set;
 
 public class Gaulois {
 	private String nom;
-	//private int force;
-	public int effetPotion = 1;
-	private int nb_trophees;
+	private int effetPotion = 1;
+	private int nbTrophees;
 	private int force;
-	private Equipement trophees[] = new Equipement[100];
+	private Equipement[] trophees = new Equipement[100];
 
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -28,8 +26,7 @@ public class Gaulois {
 //		return "le gaulois " + nom + " : ";
 //	}
 	private String prendreParole() {
-		String texte = "Le gaulois " + nom + " : ";
-		return texte;
+		return "Le gaulois " + nom + " : ";
 		}
 
 
@@ -40,12 +37,11 @@ public class Gaulois {
 //	}
 	//////////////////////////////////////
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+		System.out.println(nom + " envoie un grand coup dans la mï¿½choire de " + romain.getNom());
 		Equipement[] trophees = romain.recevoirCoup((force / 3) *effetPotion);
-		for (int i = 0; trophees != null && i < trophees.length; i++,nb_trophees++) {
-			this.trophees[nb_trophees] = trophees[i];
+		for (int i = 0; trophees != null && i < trophees.length; i++,nbTrophees++) {
+			this.trophees[nbTrophees] = trophees[i];
 		}
-		return;
 	}
 	public void boirePotion(int forceDePotion) {
 		effetPotion = forceDePotion;
@@ -55,8 +51,18 @@ public class Gaulois {
 
 	@Override
 	public String toString() {
-		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
-		
+		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";	
+	}
+	public void faireUneDonnation(Musee musee) {
+		String texte = "je donne au musee tous mes trophees : \n";
+		if(nbTrophees>0) {
+			for (int i = 0; i < trophees.length; i++) {
+				texte += "- "+trophees[i]+"\n";
+				trophees[i]=null;
+				nbTrophees--;
+			}
+			parler(texte);
+		}
 	}
 	
 
